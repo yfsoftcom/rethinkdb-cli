@@ -1,4 +1,9 @@
 FROM rethinkdb
-RUN apt update && \
-    apt install -y python3 python3-full python3-pip && \
-    pip3 install rethinkdb
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3-dev \
+    python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install rethinkdb
