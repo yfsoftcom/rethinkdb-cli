@@ -7,6 +7,4 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* 
 
-RUN python3 -m venv ./venv \
-    && source venv/bin/activate \
-    && pip3 install rethinkdb
+RUN pip3 install rethinkdb
